@@ -91,7 +91,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 -- [[ Setting options ]]
 -- See `:help vim.opt`
@@ -108,6 +108,12 @@ vim.opt.mouse = 'a'
 
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
+
+-- Set tab space to 2
+vim.opt.tabstop = 2 -- How many spaces a tab character represents
+vim.opt.shiftwidth = 2 -- How many spaces to use for each indentation level
+vim.opt.softtabstop = 2 -- How many spaces a tab feels like when editing
+vim.opt.expandtab = true -- Convert tabs to spaces (instead of using actual tab characters)
 
 -- Sync clipboard between OS and Neovim.
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
@@ -144,8 +150,8 @@ vim.opt.splitbelow = true
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
-vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.list = false
+vim.opt.listchars = { tab = '_ ', trail = '·', nbsp = '␣' }
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = 'split'
@@ -176,10 +182,10 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 
 vim.keymap.set({ 'n', 'i' }, '<C-s', '<ESC>:w<CR>')
 -- TIP: Disable arrow keys in normal mode
--- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
--- vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
--- vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
--- vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
+vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
+vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
+vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
+vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
@@ -902,7 +908,7 @@ require('lazy').setup({
         --  the list of additional_vim_regex_highlighting and disabled languages for indent.
         additional_vim_regex_highlighting = { 'ruby' },
       },
-      indent = { enable = true, disable = { 'ruby' } },
+      indent = { enable = false, disable = { 'ruby' } },
     },
     -- There are additional nvim-treesitter modules that you can use to interact
     -- with nvim-treesitter. You should go explore a few and see what interests you:
