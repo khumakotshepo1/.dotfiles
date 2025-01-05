@@ -71,7 +71,7 @@ return {
     lazy = false, -- make sure we load this during startup if it is your main colorscheme
     priority = 1000, -- make sure to load this before all the other start plugins
     init = function()
-      vim.cmd [[ colorscheme catppuccin-mocha ]]
+      vim.cmd [[ colorscheme catppuccin-frappe ]]
     end,
   },
 
@@ -103,10 +103,10 @@ return {
   },
 
   {
-    'ellisonleao/gruvbox.nvim',
+    'sainnhe/gruvbox-material',
     priority = 1000,
     init = function()
-      --vim.cmd.colorscheme 'gruvbox'
+      --vim.cmd.colorscheme 'gruvbox-material'
     end,
   },
 

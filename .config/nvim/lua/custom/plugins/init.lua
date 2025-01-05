@@ -27,13 +27,13 @@ return {
     end,
   },
 
-  {
-    'lukas-reineke/indent-blankline.nvim',
-    main = 'ibl',
-    ---@module "ibl"
-    ---@type ibl.config
-    opts = {},
-  },
+  --  {
+  --    'lukas-reineke/indent-blankline.nvim',
+  --    main = 'ibl',
+  --    ---@module "ibl"
+  --    ---@type ibl.config
+  --    opts = {},
+  --  },
 
   {
     'karb94/neoscroll.nvim',
@@ -105,8 +105,8 @@ return {
     ---@type oil.SetupOpts
     opts = {},
     -- Optional dependencies
-    dependencies = { { 'echasnovski/mini.icons', opts = {} } },
-    -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
+    -- dependencies = { { 'echasnovski/mini.icons', opts = {} } },
+    dependencies = { 'nvim-tree/nvim-web-devicons' }, -- use if prefer nvim-web-devicons
   },
   vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' }),
 }
